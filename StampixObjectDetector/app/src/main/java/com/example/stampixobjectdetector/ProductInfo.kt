@@ -30,7 +30,7 @@ class ProductInfo : AppCompatActivity() {
 
 
     fun getData(api_key: String, search: String) {
-        val search_updated = URLEncoder.encode(search, "UTF-8")
+        val search_updated = URLEncoder.encode(search, "UTF-8") // convert string to query string
         val request = Request.Builder()
             .url("https://api.asindataapi.com/request?api_key=$api_key&type=search&amazon_domain=amazon.com&search_term=$search_updated")
             .build()
@@ -89,7 +89,7 @@ class ProductInfo : AppCompatActivity() {
         println("label is $label")
         println("Going to start the request")
         if (label != null) {
-            getData("936C612A044D4592B1FA3BCEA6BAE968", label)
+            getData("REPLACE_WITH_API_KEY", label)
         }
         println("Request is done")
     }
